@@ -28,37 +28,36 @@ public class Test {
 
     }
     
-    public void checkAnswer(){
+    public String checkAnswer(){
 			
     		try{
  			System.out.print("Answere: ");
 			_answere = input.nextInt();
 			int number;
 			if (_answere<0){
-    			System.out.println("You entered invalid data! Please enter a positive number");
+    			return("You entered invalid data! Please enter a positive number");
 			}
 			else{
 				if (_answere>4){
-        			System.out.println("You entered invalid data! Please enter a correct number");
+        			return("You entered invalid data! Please enter a correct number");
 				}
 				else{
 			switch(_answere){
 			case 3:
 			    number = randomNumbers.nextInt(_rightAnsweres);
-				System.out.println(RightAnsweres[number]);
-				break;
-			
+				return(RightAnsweres[number]);
 			case 1:
 			case 2:
 			case 4:
 				 number = randomNumbers.nextInt(_wrongAnsweres);
-				System.out.println(WrongAnsweres[number]);
-				break;
+				return(WrongAnsweres[number]);
 			}
 			}
 			}
     		} catch (Exception e) {
-    			System.out.println("You entered invalid data! Please enter a number");
+    			return("You entered invalid data! Please enter a number");
     		}
+			return null;
+
     	}	
 }

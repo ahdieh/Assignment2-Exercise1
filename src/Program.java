@@ -5,7 +5,9 @@ public class Program {
 
 		Test test = new Test();
 		test.simulateQuestion();
-		test.checkAnswer();
+		test.inputAnswer();
+		test.checkAnswer(Integer.parseInt(test.GetAnswrere()));
+		test.simulateMessage();
 	}
 
 }

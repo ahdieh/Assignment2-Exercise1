@@ -59,7 +59,7 @@ public class Test {
     	this._print = print;
     }
     
-    public int GetRightt(){
+    public int GetRight(){
     	return this._right;
     }
     
@@ -123,12 +123,18 @@ public class Test {
 			         this.SetRandom(randomNumbers.nextInt(this.WrongAnsweres.length));
 				     String c = this.WrongAnsweres[this.GetRandom()];
 				     this.SetPrint(c);
+				     int w =this.GetWrong();
+				     w++;
+				     this.SetWrong(w);
 				     break;
 				    
 		            case 3:
 					 this.SetRandom(randomNumbers.nextInt(this.RightAnsweres.length));
 				     String d = this.RightAnsweres[this.GetRandom()];
 				     this.SetPrint(d);
+				     int r =this.GetRight();
+				     r++;
+				     this.SetRight(r);
 				     break;
 			         }
 			    }
@@ -137,6 +143,15 @@ public class Test {
 			System.out.println();
 			System.out.println(this.GetPrint());
 		}
-    		
+    	
+		public void Result(){
+			int total = this.GetRight()+this.GetWrong();
+			double percentage =((this.GetRight()/total)*100);
+			System.out.printf("***You answered %d correct and %d wrong.\nYour correct answeres are %.2f percent of the total questions", this.GetRight(),this.GetWrong(), percentage);
+			
+	
+			
+		}
 }
+
 

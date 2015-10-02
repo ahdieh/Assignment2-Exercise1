@@ -8,6 +8,7 @@ public class Program {
 		test.inputAnswer();
 		test.checkAnswer(Integer.parseInt(test.GetAnswrere()));
 		test.simulateMessage();
+		test.Result();
 	}
 
 }
